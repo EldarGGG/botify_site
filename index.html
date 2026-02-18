@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botify.kz — Внедрение ИИ в отделы продаж, поддержку и HR</title>
+  <meta name="description" content="Автоматизация на базе ChatGPT, Gemini и CRM (AmoCRM, Bitrix). Строим AI-архитектуру, которая увеличивает конверсию и снижает нагрузку на команду.">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Anti-flash: apply theme before paint -->
+  <script>
+    (function(){var t=localStorage.getItem('botify-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}else if(window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
+</head>
+<body>
+
+<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="navbar-logo">botify<span>.kz</span></a>
+
+  <div class="navbar-nav">
+    <a href="index.html" class="nav-link active">Главная</a>
+    <a href="solutions.html" class="nav-link">Решения</a>
+    <a href="cases.html" class="nav-link">Кейсы</a>
+    <a href="platform.html" class="nav-link">Платформа</a>
+    <a href="about.html" class="nav-link">О нас</a>
+    <a href="blog.html" class="nav-link">Блог</a>
+    <a href="contacts.html" class="nav-link">Контакты</a>
+  </div>
+
+  <div class="navbar-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <a href="contacts.html" class="btn-nav">Получить аудит</a>
+    <button class="hamburger" id="hamburger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Главная</a>
+  <a href="solutions.html">Решения</a>
+  <a href="cases.html">Кейсы</a>
+  <a href="platform.html">Платформа</a>
+  <a href="about.html">О нас</a>
+  <a href="blog.html">Блог</a>
+  <a href="contacts.html">Контакты</a>
+  <a href="contacts.html" class="btn-nav" style="text-align:center;margin-top:8px;border-radius:9px;">Получить аудит</a>
+</div>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal">
+        <span class="badge-dot"></span>
+        AI-интегратор №1 в Казахстане
+      </div>
+
+      <h1 class="reveal" style="transition-delay:80ms">Внедряем <em>ИИ</em> в отделы продаж, поддержку и HR</h1>
+
+      <p class="hero-sub reveal" style="transition-delay:160ms">
+        Автоматизация на базе ChatGPT, Gemini и CRM (AmoCRM, Bitrix).
+        Строим архитектуру, которая увеличивает конверсию и снижает нагрузку на команду.
+      </p>
+
+      <div class="hero-actions reveal" style="transition-delay:240ms">
+        <a href="contacts.html" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.5a19.36 19.36 0 0 1-3-8.59A2 2 0 0 1 3.77 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.61 5.61l.91-1.16a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Получить аудит процессов
+        </a>
+        <a href="cases.html" class="btn btn-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Посмотреть кейсы
+        </a>
+      </div>
+
+      <div class="hero-stats stagger reveal" style="transition-delay:320ms">
+        <div class="hero-stat-item">
+          <div class="stat-num">30+</div>
+          <div class="label">внедрённых проектов</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="stat-num">2 года</div>
+          <div class="label">на рынке РК</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="stat-num">×3</div>
+          <div class="label">рост конверсии у клиентов</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="stat-num">−60%</div>
+          <div class="label">нагрузки на менеджеров</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TECH LOGOS ═══════════════════════ -->
+<div class="tech-logos reveal">
+  <div class="container">
+    <div class="tech-logos-inner">
+      <span class="tech-logos-label">Работаем на базе:</span>
+
+      <div class="tech-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z"/></svg>
+        ChatGPT
+      </div>
+
+      <div class="tech-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 2.4c5.302 0 9.6 4.298 9.6 9.6S17.302 21.6 12 21.6 2.4 17.302 2.4 12 6.698 2.4 12 2.4zm0 3.6c-3.313 0-6 2.687-6 6s2.687 6 6 6 6-2.687 6-6-2.687-6-6-6z"/></svg>
+        Gemini
+      </div>
+
+      <div class="tech-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="3"/><path d="M8 12h8M8 8h8M8 16h5"/></svg>
+        AmoCRM
+      </div>
+
+      <div class="tech-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Bitrix24
+      </div>
+
+      <div class="tech-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        Telegram
+      </div>
+
+      <div class="tech-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        WhatsApp
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ PROBLEM → SOLUTION ═══════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="badge">
+        <div class="badge-dot"></div>
+        Проблема рынка
+      </div>
+      <h2>Бизнес теряет деньги не из-за отсутствия лидов,<br>а из-за <em style="font-style:normal;color:var(--cyan)">отсутствия системности</em></h2>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-list reveal-left">
+        <div class="problem-item">
+          <div class="problem-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Менеджеры отвечают с задержкой</h4>
+            <p>Клиент ждёт ответа часами — и уходит к конкурентам.</p>
+          </div>
+        </div>
+
+        <div class="problem-item">
+          <div class="problem-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <h4>Лиды теряются между каналами</h4>
+            <p>Заявки из Telegram, сайта и Instagram не попадают в CRM.</p>
+          </div>
+        </div>
+
+        <div class="problem-item">
+          <div class="problem-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <h4>CRM используется формально</h4>
+            <p>Данные не заполняются, аналитика не ведётся, управления нет.</p>
+          </div>
+        </div>
+
+        <div class="problem-item">
+          <div class="problem-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <div>
+            <h4>Нет прозрачной аналитики</h4>
+            <p>Непонятно, откуда лиды, кто лучший менеджер, где воронка рвётся.</p>
+          </div>
+        </div>
+
+        <div class="problem-item">
+          <div class="problem-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <h4>Отдел продаж зависит от людей</h4>
+            <p>Уходит один сотрудник — теряются знания, клиенты, выручка.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-card reveal-right">
+        <div class="badge" style="margin-bottom:24px">
+          <div class="badge-dot"></div>
+          Наше решение
+        </div>
+        <h3>Мы строим AI-инфраструктуру вокруг вашего бизнеса</h3>
+        <p style="margin:16px 0 24px">
+          botify.kz — интегратор AI-решений. Объединяем чат-боты, CRM и автоматизацию процессов в единую рабочую архитектуру.
+        </p>
+
+        <div class="solution-features">
+          <div class="solution-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            AI-боты отвечают клиентам 24/7 мгновенно
+          </div>
+          <div class="solution-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Все лиды автоматически попадают в CRM
+          </div>
+          <div class="solution-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Сделки создаются и продвигаются автоматически
+          </div>
+          <div class="solution-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Аналитика и контроль качества в реальном времени
+          </div>
+          <div class="solution-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Система работает без привязки к людям
+          </div>
+        </div>
+
+        <a href="solutions.html" class="btn btn-primary" style="margin-top:28px;width:100%;justify-content:center">
+          Посмотреть решения
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SERVICES ═══════════════════════ -->
+<section class="section" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <div class="badge" style="margin:0 auto 20px">Наши решения</div>
+      <h2>Что мы внедряем</h2>
+      <p>Каждое решение — это готовая система, интегрированная в ваши процессы</p>
+    </div>
+
+    <div class="services-grid stagger">
+      <div class="service-card reveal-scale">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h4>AI для отдела продаж</h4>
+        <p>Квалификация лидов, ответы 24/7 и автоматическое доведение до оплаты.</p>
+        <div class="service-features">
+          <div class="service-feature">Квалификация лидов 24/7</div>
+          <div class="service-feature">Создание сделок в CRM</div>
+          <div class="service-feature">Интеграция AmoCRM / Bitrix</div>
+          <div class="service-feature">Аналитика диалогов</div>
+        </div>
+        <a href="solutions.html#sales" class="btn btn-ghost btn-sm" style="margin-top:20px">Подробнее</a>
+      </div>
+
+      <div class="service-card reveal-scale">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h4>AI для техподдержки</h4>
+        <p>Автоответы на базе знаний, эскалация сложных кейсов к оператору.</p>
+        <div class="service-features">
+          <div class="service-feature">Ответы на типовые запросы</div>
+          <div class="service-feature">База знаний компании</div>
+          <div class="service-feature">Эскалация менеджеру</div>
+          <div class="service-feature">Снижение нагрузки до 60%</div>
+        </div>
+        <a href="solutions.html#support" class="btn btn-ghost btn-sm" style="margin-top:20px">Подробнее</a>
+      </div>
+
+      <div class="service-card reveal-scale">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>AI для HR</h4>
+        <p>Скрининг резюме, ответы кандидатам и назначение интервью автоматически.</p>
+        <div class="service-features">
+          <div class="service-feature">Скрининг резюме</div>
+          <div class="service-feature">Ответы соискателям</div>
+          <div class="service-feature">Назначение интервью</div>
+          <div class="service-feature">Интеграция с HR CRM</div>
+        </div>
+        <a href="solutions.html#hr" class="btn btn-ghost btn-sm" style="margin-top:20px">Подробнее</a>
+      </div>
+
+      <div class="service-card reveal-scale">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h4>Интеграция с CRM</h4>
+        <p>Настройка AmoCRM и Bitrix24 — воронки, сделки, автоматизация.</p>
+        <div class="service-features">
+          <div class="service-feature">Настройка воронок</div>
+          <div class="service-feature">Автоматические задачи</div>
+          <div class="service-feature">API-интеграции</div>
+          <div class="service-feature">Обучение команды</div>
+        </div>
+        <a href="solutions.html#crm" class="btn btn-ghost btn-sm" style="margin-top:20px">Подробнее</a>
+      </div>
+
+      <div class="service-card reveal-scale">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h4>Индивидуальная автоматизация</h4>
+        <p>Кастомная логика и API-интеграции под сложные бизнес-процессы.</p>
+        <div class="service-features">
+          <div class="service-feature">Кастомная логика</div>
+          <div class="service-feature">API-интеграции</div>
+          <div class="service-feature">Внутренние процессы</div>
+          <div class="service-feature">Мультиканальность</div>
+        </div>
+        <a href="solutions.html#custom" class="btn btn-ghost btn-sm" style="margin-top:20px">Подробнее</a>
+      </div>
+
+      <div class="service-card reveal-scale" style="border-color:var(--border-cyan);background:rgba(6,182,212,0.04)">
+        <div class="card-icon" style="background:rgba(6,182,212,0.15)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M9 8h6M9 12h4"/></svg>
+        </div>
+        <h4>Собственная платформа</h4>
+        <p>Тестируйте готовые решения прямо в браузере — без установки.</p>
+        <div class="service-features">
+          <div class="service-feature">Демо-кейсы онлайн</div>
+          <div class="service-feature">Готовые сценарии</div>
+          <div class="service-feature">Быстрый деплой</div>
+          <div class="service-feature">Управление логикой AI</div>
+        </div>
+        <a href="platform.html" class="btn btn-primary btn-sm" style="margin-top:20px">Посмотреть демо</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CASES PREVIEW ═══════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px">
+      <div>
+        <div class="badge">Кейсы</div>
+        <h2 style="margin-top:16px">Результаты наших клиентов</h2>
+      </div>
+      <a href="cases.html" class="btn btn-secondary btn-sm">Смотреть все кейсы</a>
+    </div>
+
+    <div class="cases-grid stagger">
+      <div class="case-card reveal">
+        <div class="case-meta">
+          <span class="case-tag">Недвижимость</span>
+          <span class="case-tag">AmoCRM</span>
+        </div>
+        <div class="case-title">Devland — Застройщик РК</div>
+        <div class="case-problem">Менеджеры не успевали обрабатывать входящие заявки. Время ответа — более 15 минут. Лиды терялись.</div>
+        <div class="case-results">
+          <div class="case-result"><div class="num">+28%</div><div class="desc">конверсия</div></div>
+          <div class="case-result"><div class="num">20 сек</div><div class="desc">время ответа</div></div>
+          <div class="case-result"><div class="num">−40%</div><div class="desc">нагрузка</div></div>
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-meta">
+          <span class="case-tag">E-commerce</span>
+          <span class="case-tag">Telegram Bot</span>
+        </div>
+        <div class="case-title">TechStore KZ — Интернет-магазин</div>
+        <div class="case-problem">400+ однотипных запросов в день в поддержку. Операторы перегружены, клиенты недовольны временем ответа.</div>
+        <div class="case-results">
+          <div class="case-result"><div class="num">−60%</div><div class="desc">нагрузка</div></div>
+          <div class="case-result"><div class="num">2 мин</div><div class="desc">vs 2 часа</div></div>
+          <div class="case-result"><div class="num">×2.4</div><div class="desc">NPS</div></div>
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-meta">
+          <span class="case-tag">HR / Найм</span>
+          <span class="case-tag">Bitrix24</span>
+        </div>
+        <div class="case-title">AlmaHR — Рекрутинговое агентство</div>
+        <div class="case-problem">Ручная обработка 200+ резюме в месяц. HR-менеджеры тратили всё рабочее время на первичный скрининг.</div>
+        <div class="case-results">
+          <div class="case-result"><div class="num">200+</div><div class="desc">резюме/мес</div></div>
+          <div class="case-result"><div class="num">−70%</div><div class="desc">ручной труд</div></div>
+          <div class="case-result"><div class="num">×3</div><div class="desc">скорость</div></div>
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-meta">
+          <span class="case-tag">Финансы</span>
+          <span class="case-tag">AmoCRM + API</span>
+        </div>
+        <div class="case-title">FinPro — Финансовые услуги</div>
+        <div class="case-problem">Сложная квалификация клиентов: разные продукты, условия, документы. Менеджеры тратили до 30 минут на квалификацию.</div>
+        <div class="case-results">
+          <div class="case-result"><div class="num">+35%</div><div class="desc">конверсия</div></div>
+          <div class="case-result"><div class="num">3 мин</div><div class="desc">квалификация</div></div>
+          <div class="case-result"><div class="num">ROI 6х</div><div class="desc">за 3 месяца</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ WHY US ═══════════════════════ -->
+<section class="section" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="grid-2" style="gap:64px;align-items:center">
+      <div class="reveal-left">
+        <div class="badge">Почему botify.kz</div>
+        <h2 style="margin-top:16px">Опыт и архитектурный подход</h2>
+        <p style="margin-top:16px;margin-bottom:32px">
+          Мы не продаём «бота». Мы проектируем систему, которая интегрируется в ваши бизнес-процессы и работает без постоянного контроля.
+        </p>
+        <div class="why-grid">
+          <div class="why-stat">
+            <div class="num">30+</div>
+            <h4>Внедрённых проектов</h4>
+            <p>По всему Казахстану в разных нишах</p>
+          </div>
+          <div class="why-stat">
+            <div class="num">2 г.</div>
+            <h4>На рынке</h4>
+            <p>С 2022 года — одни из первых в РК</p>
+          </div>
+          <div class="why-stat">
+            <div class="num">#1</div>
+            <h4>В AI для продаж</h4>
+            <p>Один из первых интеграторов в Казахстане</p>
+          </div>
+          <div class="why-stat">
+            <div class="num">Own</div>
+            <h4>Своя платформа</h4>
+            <p>Для быстрого развёртывания решений</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div style="background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px">
+          <div style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:24px">Архитектура решения</div>
+
+          <div style="display:flex;flex-direction:column;gap:0">
+            <div style="display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap">
+              <div style="flex:1;min-width:60px;padding:10px 8px;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:8px;text-align:center;font-size:0.75rem;font-weight:600;color:var(--blue-light)">Telegram</div>
+              <div style="flex:1;min-width:60px;padding:10px 8px;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:8px;text-align:center;font-size:0.75rem;font-weight:600;color:var(--blue-light)">WhatsApp</div>
+              <div style="flex:1;min-width:60px;padding:10px 8px;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:8px;text-align:center;font-size:0.75rem;font-weight:600;color:var(--blue-light)">Сайт</div>
+              <div style="flex:1;min-width:60px;padding:10px 8px;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:8px;text-align:center;font-size:0.75rem;font-weight:600;color:var(--blue-light)">Instagram</div>
+            </div>
+
+            <div style="text-align:center;padding:4px 0;color:var(--text-muted);font-size:20px">↓</div>
+
+            <div style="padding:16px;background:rgba(6,182,212,0.1);border:1px solid var(--border-cyan);border-radius:8px;text-align:center;margin-bottom:8px">
+              <div style="font-weight:700;color:var(--cyan)">AI-обработка</div>
+              <div style="font-size:0.8125rem;color:var(--text-muted);margin-top:4px">ChatGPT / Gemini</div>
+            </div>
+
+            <div style="text-align:center;padding:4px 0;color:var(--text-muted);font-size:20px">↓</div>
+
+            <div style="padding:16px;background:rgba(6,182,212,0.06);border:1px solid var(--border-cyan);border-radius:8px;text-align:center;margin-bottom:8px">
+              <div style="font-weight:700;color:var(--cyan)">CRM (AmoCRM / Bitrix)</div>
+              <div style="font-size:0.8125rem;color:var(--text-muted);margin-top:4px">Сделки → Воронка → Аналитика</div>
+            </div>
+
+            <div style="text-align:center;padding:4px 0;color:var(--text-muted);font-size:20px">↓</div>
+
+            <div style="display:flex;gap:8px">
+              <div style="flex:1;padding:12px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;text-align:center;font-size:0.8125rem;font-weight:600;color:#4ADE80">Менеджер</div>
+              <div style="flex:1;padding:12px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;text-align:center;font-size:0.8125rem;font-weight:600;color:#4ADE80">Аналитика</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ PROCESS ═══════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <div class="badge" style="margin:0 auto 20px">Как мы работаем</div>
+      <h2>Шесть этапов внедрения</h2>
+      <p>От первого звонка до поддержки после запуска</p>
+    </div>
+
+    <div class="process-steps stagger">
+      <div class="process-step reveal-scale">
+        <div class="process-num">01</div>
+        <h4>Аудит</h4>
+        <p>Анализируем процессы, находим точки потерь</p>
+      </div>
+      <div class="process-step reveal-scale">
+        <div class="process-num">02</div>
+        <h4>Архитектура</h4>
+        <p>Проектируем AI-систему под ваши задачи</p>
+      </div>
+      <div class="process-step reveal-scale">
+        <div class="process-num">03</div>
+        <h4>Разработка</h4>
+        <p>Создаём и настраиваем все компоненты</p>
+      </div>
+      <div class="process-step reveal-scale">
+        <div class="process-num">04</div>
+        <h4>Интеграция</h4>
+        <p>Подключаем к CRM, каналам, сервисам</p>
+      </div>
+      <div class="process-step reveal-scale">
+        <div class="process-num">05</div>
+        <h4>Обучение</h4>
+        <p>Обучаем команду работать с системой</p>
+      </div>
+      <div class="process-step reveal-scale">
+        <div class="process-num">06</div>
+        <h4>Поддержка</h4>
+        <p>Поддерживаем и масштабируем систему</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ROI CALCULATOR ═══════════════════════ -->
+<section class="section" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <div class="badge" style="margin:0 auto 20px">Калькулятор ROI</div>
+      <h2>Посчитайте окупаемость</h2>
+      <p>Введите данные вашего бизнеса — получите оценку экономии</p>
+    </div>
+
+    <div style="max-width:800px;margin:0 auto">
+      <div class="calc-card reveal">
+        <div class="grid-2" style="gap:40px">
+          <div>
+            <div class="form-group">
+              <label class="form-label">Количество менеджеров: <span id="managersVal" style="color:var(--cyan)">5</span></label>
+              <input type="range" class="calc-slider" id="managers" min="1" max="50" value="5">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Средняя зарплата (тыс. ₸): <span id="salaryVal" style="color:var(--cyan)">300</span></label>
+              <input type="range" class="calc-slider" id="salary" min="100" max="1000" step="50" value="300">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Заявок в месяц: <span id="leadsVal" style="color:var(--cyan)">200</span></label>
+              <input type="range" class="calc-slider" id="leads" min="50" max="5000" step="50" value="200">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Текущая конверсия (%): <span id="convVal" style="color:var(--cyan)">15</span></label>
+              <input type="range" class="calc-slider" id="conv" min="1" max="50" value="15">
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div class="calc-result">
+              <div style="font-size:0.8125rem;color:var(--text-muted);margin-bottom:8px">Экономия ФОТ в месяц</div>
+              <div class="big-num" id="fot">750 000 ₸</div>
+            </div>
+            <div class="calc-result">
+              <div style="font-size:0.8125rem;color:var(--text-muted);margin-bottom:8px">Дополнительная выручка</div>
+              <div class="big-num" id="revenue">+28 сделок</div>
+            </div>
+            <div class="calc-result">
+              <div style="font-size:0.8125rem;color:var(--text-muted);margin-bottom:8px">ROI за 6 месяцев</div>
+              <div class="big-num" id="roi">420%</div>
+            </div>
+            <a href="contacts.html" class="btn btn-primary" style="justify-content:center">
+              Получить точный расчёт
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ LEAD MAGNET / QUIZ ═══════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <div class="badge" style="margin:0 auto 20px">Бесплатный чек-лист</div>
+      <h2>Готов ли ваш отдел продаж к AI?</h2>
+      <p>Пройдите быстрый аудит — узнайте точки роста за 2 минуты</p>
+    </div>
+
+    <div class="quiz-card reveal">
+      <div class="quiz-progress" id="quizProgress">
+        <div class="quiz-dot done"></div>
+        <div class="quiz-dot"></div>
+        <div class="quiz-dot"></div>
+        <div class="quiz-dot"></div>
+        <div class="quiz-dot"></div>
+      </div>
+
+      <div id="quizStep1">
+        <div class="quiz-question">1. Как быстро ваши менеджеры отвечают на входящие заявки?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="selectQuizOption(this, 1)">В течение 5 минут</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 1)">В течение часа</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 1)">Несколько часов или больше</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 1)">Непредсказуемо</div>
+        </div>
+      </div>
+
+      <div id="quizStep2" style="display:none">
+        <div class="quiz-question">2. Ведёте ли вы CRM систему?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="selectQuizOption(this, 2)">Да, активно используем</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 2)">Есть, но используем формально</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 2)">Нет CRM системы</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 2)">Только Excel/таблицы</div>
+        </div>
+      </div>
+
+      <div id="quizStep3" style="display:none">
+        <div class="quiz-question">3. Сколько лидов теряется до первого контакта с менеджером?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="selectQuizOption(this, 3)">Менее 10%</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 3)">10-30%</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 3)">Более 30%</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 3)">Не знаю / не считаем</div>
+        </div>
+      </div>
+
+      <div id="quizStep4" style="display:none">
+        <div class="quiz-question">4. Есть ли у вас аналитика по отделу продаж?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="selectQuizOption(this, 4)">Да, полная картина</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 4)">Частичная аналитика</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 4)">Только выручка</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 4)">Нет аналитики</div>
+        </div>
+      </div>
+
+      <div id="quizStep5" style="display:none">
+        <div class="quiz-question">5. Сколько каналов вы используете для приёма заявок?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="selectQuizOption(this, 5)">Только сайт или один канал</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 5)">2-3 канала</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 5)">4 и более каналов</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, 5)">Не знаю / разные</div>
+        </div>
+      </div>
+
+      <div id="quizResult" style="display:none;text-align:center">
+        <div style="width:80px;height:80px;border-radius:50%;background:rgba(6,182,212,0.15);border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;color:var(--cyan)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="margin-bottom:12px">Аудит готов!</h3>
+        <p style="margin-bottom:24px">Мы подготовим персональный чек-лист и покажем, где можно автоматизировать процессы. Оставьте контакт — пришлём результат.</p>
+        <div class="form-group" style="text-align:left">
+          <label class="form-label">Ваш номер телефона</label>
+          <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__">
+        </div>
+        <a href="contacts.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px">
+          Получить чек-лист бесплатно
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CTA SECTION ═══════════════════════ -->
+<div class="cta-section reveal">
+  <div class="container">
+    <div class="cta-content">
+      <div class="badge" style="margin:0 auto 24px">Бесплатный аудит</div>
+      <h2>Получите аудит отдела продаж</h2>
+      <p>Покажем, где теряются лиды, что можно автоматизировать и как быстро окупится внедрение.</p>
+      <div class="cta-actions">
+        <a href="contacts.html" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Записаться на стратегическую сессию
+        </a>
+        <a href="https://wa.me/77000000000" target="_blank" rel="noopener" class="btn btn-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Написать в WhatsApp
+        </a>
+      </div>
+
+      <div class="cta-checklist">
+        <div class="cta-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Бесплатно</div>
+        <div class="cta-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>60 минут</div>
+        <div class="cta-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Конкретный план действий</div>
+        <div class="cta-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Без обязательств</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="navbar-logo" style="font-size:1.5rem">botify<span>.kz</span></div>
+        <p>AI-интегратор для бизнеса в Казахстане. Внедряем ChatGPT, Gemini и CRM-автоматизацию в отделы продаж, поддержку и HR.</p>
+        <div class="footer-socials" style="margin-top:20px">
+          <a href="https://t.me/botifykz" class="footer-social" title="Telegram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+          <a href="https://wa.me/77000000000" class="footer-social" title="WhatsApp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </a>
+          <a href="#" class="footer-social" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Решения</h5>
+        <ul>
+          <li><a href="solutions.html#sales">AI для продаж</a></li>
+          <li><a href="solutions.html#support">AI для поддержки</a></li>
+          <li><a href="solutions.html#hr">AI для HR</a></li>
+          <li><a href="solutions.html#crm">Интеграция CRM</a></li>
+          <li><a href="solutions.html#custom">Индивид. автоматизация</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Компания</h5>
+        <ul>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="cases.html">Кейсы</a></li>
+          <li><a href="platform.html">Платформа</a></li>
+          <li><a href="blog.html">Блог</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Контакты</h5>
+        <ul>
+          <li><a href="tel:+77000000000">+7 (700) 000-00-00</a></li>
+          <li><a href="mailto:hello@botify.kz">hello@botify.kz</a></li>
+          <li><a href="#">Алматы, Казахстан</a></li>
+          <li><a href="https://t.me/botifykz" target="_blank">Telegram канал</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 botify.kz — AI-интеграции для бизнеса в Казахстане</p>
+      <p style="color:var(--text-muted)">Разработано в Алматы</p>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+  // ROI Calculator
+  function updateCalc() {
+    var managers = parseInt(document.getElementById('managers').value);
+    var salary   = parseInt(document.getElementById('salary').value);
+    var leads    = parseInt(document.getElementById('leads').value);
+    var conv     = parseInt(document.getElementById('conv').value);
+
+    document.getElementById('managersVal').textContent = managers;
+    document.getElementById('salaryVal').textContent   = salary;
+    document.getElementById('leadsVal').textContent    = leads;
+    document.getElementById('convVal').textContent     = conv;
+
+    var fotSaving = Math.round(managers * salary * 0.4) * 1000;
+    document.getElementById('fot').textContent = (fotSaving / 1000).toFixed(0) + ' 000 ₸';
+
+    var extraDeals = Math.round(leads * 0.08);
+    document.getElementById('revenue').textContent = '+' + extraDeals + ' сделок';
+
+    var implementCost = 500000;
+    var monthlyGain   = fotSaving + (extraDeals * salary * 1000 * 0.3);
+    var roi6months    = Math.round(((monthlyGain * 6) / implementCost) * 100);
+    document.getElementById('roi').textContent = roi6months + '%';
+  }
+
+  ['managers','salary','leads','conv'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', updateCalc);
+  });
+  updateCalc();
+
+  // Quiz
+  var currentStep = 1;
+  var totalSteps = 5;
+
+  function selectQuizOption(el, step) {
+    var container = el.parentElement;
+    container.querySelectorAll('.quiz-option').forEach(function(o) { o.classList.remove('selected'); });
+    el.classList.add('selected');
+    setTimeout(function() { nextQuizStep(step); }, 400);
+  }
+
+  function nextQuizStep(step) {
+    document.getElementById('quizStep' + step).style.display = 'none';
+    var dots = document.querySelectorAll('#quizProgress .quiz-dot');
+    currentStep++;
+    if (currentStep <= totalSteps) {
+      document.getElementById('quizStep' + currentStep).style.display = 'block';
+      for (var i = 0; i < currentStep; i++) { if (dots[i]) dots[i].classList.add('done'); }
+    } else {
+      dots.forEach(function(d) { d.classList.add('done'); });
+      document.getElementById('quizResult').style.display = 'block';
+    }
+  }
+</script>
+</body>
+</html>

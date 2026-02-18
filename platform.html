@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Платформа — Botify.kz</title>
+  <meta name="description" content="Собственная платформа Botify.kz для демонстрации, тестирования и управления AI-решениями. Готовые сценарии, открытые демо.">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function(){var t=localStorage.getItem('botify-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}else if(window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="navbar-logo">botify<span>.kz</span></a>
+  <div class="navbar-nav">
+    <a href="index.html" class="nav-link">Главная</a>
+    <a href="solutions.html" class="nav-link">Решения</a>
+    <a href="cases.html" class="nav-link">Кейсы</a>
+    <a href="platform.html" class="nav-link active">Платформа</a>
+    <a href="about.html" class="nav-link">О нас</a>
+    <a href="blog.html" class="nav-link">Блог</a>
+    <a href="contacts.html" class="nav-link">Контакты</a>
+  </div>
+  <div class="navbar-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <a href="contacts.html" class="btn-nav">Получить аудит</a>
+    <button class="hamburger" id="hamburger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Главная</a>
+  <a href="solutions.html">Решения</a>
+  <a href="cases.html">Кейсы</a>
+  <a href="platform.html">Платформа</a>
+  <a href="about.html">О нас</a>
+  <a href="blog.html">Блог</a>
+  <a href="contacts.html">Контакты</a>
+  <a href="contacts.html" class="btn-nav" style="text-align:center;margin-top:8px;border-radius:9px;">Получить аудит</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero reveal">
+  <div class="container">
+    <div class="badge" style="margin:0 auto 20px">Платформа</div>
+    <h1>Собственная платформа<br><em style="font-style:normal;color:var(--cyan)">botify.kz</em></h1>
+    <p>Разработали внутреннюю платформу для быстрого развёртывания, демонстрации и управления AI-решениями.</p>
+    <div style="display:flex;gap:16px;justify-content:center;margin-top:32px;flex-wrap:wrap">
+      <a href="contacts.html" class="btn btn-primary">Запросить демо-доступ</a>
+      <a href="#demos" class="btn btn-secondary">Смотреть демо-решения</a>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT IS PLATFORM -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="gap:64px;align-items:center">
+      <div>
+        <div class="badge">Что это такое</div>
+        <h2 style="margin-top:16px">Технологическая основа всех наших решений</h2>
+        <p style="margin-top:16px;margin-bottom:28px">
+          Мы не строим каждый проект с нуля. У нас есть собственная платформа — набор готовых компонентов, шаблонов и инструментов, которые позволяют быстро разворачивать, настраивать и масштабировать AI-решения.
+        </p>
+
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;align-items:flex-start;gap:16px">
+            <div style="width:40px;height:40px;border-radius:10px;background:var(--cyan-glow);border:1px solid var(--border-cyan);display:flex;align-items:center;justify-content:center;color:var(--cyan);flex-shrink:0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div>
+              <h4>Быстрый деплой</h4>
+              <p>Запуск нового AI-агента занимает дни, а не месяцы — за счёт готовой инфраструктуры.</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px">
+            <div style="width:40px;height:40px;border-radius:10px;background:var(--cyan-glow);border:1px solid var(--border-cyan);display:flex;align-items:center;justify-content:center;color:var(--cyan);flex-shrink:0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div>
+              <h4>Демонстрация кейсов</h4>
+              <p>Можем показать работающий прототип ещё на этапе переговоров — не презентацию, а рабочую систему.</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px">
+            <div style="width:40px;height:40px;border-radius:10px;background:var(--cyan-glow);border:1px solid var(--border-cyan);display:flex;align-items:center;justify-content:center;color:var(--cyan);flex-shrink:0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4>Управление логикой AI</h4>
+              <p>Без технических знаний: меняйте сценарии, добавляйте контент, обновляйте базу знаний.</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px">
+            <div style="width:40px;height:40px;border-radius:10px;background:var(--cyan-glow);border:1px solid var(--border-cyan);display:flex;align-items:center;justify-content:center;color:var(--cyan);flex-shrink:0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <div>
+              <h4>Аналитика в реальном времени</h4>
+              <p>Dashboard с метриками: диалоги, конверсия, топ-запросы, время ответа.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Platform Screenshot Mockup -->
+      <div class="demo-window">
+        <div class="demo-titlebar">
+          <div class="demo-dot demo-dot-red"></div>
+          <div class="demo-dot demo-dot-yellow"></div>
+          <div class="demo-dot demo-dot-green"></div>
+          <div class="demo-url">platform.botify.kz / dashboard</div>
+        </div>
+        <div class="demo-body" style="padding:20px;background:var(--bg-base)">
+          <!-- Dashboard mock -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px">
+            <div style="background:var(--bg-card);border:1px solid var(--border-cyan);border-radius:8px;padding:14px;text-align:center">
+              <div style="font-size:1.5rem;font-weight:800;color:var(--cyan)">1,247</div>
+              <div style="font-size:0.75rem;color:var(--text-muted)">диалогов сегодня</div>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border-cyan);border-radius:8px;padding:14px;text-align:center">
+              <div style="font-size:1.5rem;font-weight:800;color:var(--cyan)">94%</div>
+              <div style="font-size:0.75rem;color:var(--text-muted)">решено AI</div>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border-cyan);border-radius:8px;padding:14px;text-align:center">
+              <div style="font-size:1.5rem;font-weight:800;color:var(--cyan)">18 сек</div>
+              <div style="font-size:0.75rem;color:var(--text-muted)">ср. ответ</div>
+            </div>
+          </div>
+          <!-- Chart bars -->
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:12px">
+            <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:10px">Диалоги за неделю</div>
+            <div style="display:flex;align-items:flex-end;gap:6px;height:60px">
+              <div style="flex:1;background:rgba(6,182,212,0.3);border-radius:3px 3px 0 0;height:40%"></div>
+              <div style="flex:1;background:rgba(6,182,212,0.4);border-radius:3px 3px 0 0;height:55%"></div>
+              <div style="flex:1;background:rgba(6,182,212,0.5);border-radius:3px 3px 0 0;height:70%"></div>
+              <div style="flex:1;background:rgba(6,182,212,0.6);border-radius:3px 3px 0 0;height:60%"></div>
+              <div style="flex:1;background:rgba(6,182,212,0.7);border-radius:3px 3px 0 0;height:80%"></div>
+              <div style="flex:1;background:rgba(6,182,212,0.9);border-radius:3px 3px 0 0;height:90%"></div>
+              <div style="flex:1;background:var(--cyan);border-radius:3px 3px 0 0;height:100%"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:0.65rem;color:var(--text-muted);margin-top:6px">
+              <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+            </div>
+          </div>
+          <!-- Recent dialogs -->
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px">
+            <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:10px">Последние диалоги</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:0.8125rem">
+                <span style="color:var(--text-secondary)">Алина К. — Вопрос о доставке</span>
+                <span style="color:#4ADE80;font-size:0.75rem">✓ Решено AI</span>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:0.8125rem">
+                <span style="color:var(--text-secondary)">Марат А. — Возврат товара</span>
+                <span style="color:var(--cyan);font-size:0.75rem">→ Оператор</span>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:0.8125rem">
+                <span style="color:var(--text-secondary)">ТОО «Стройком» — Цены на опт</span>
+                <span style="color:#4ADE80;font-size:0.75rem">✓ Решено AI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM CAPABILITIES -->
+<section class="section" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="badge" style="margin:0 auto 20px">Возможности</div>
+      <h2>Что умеет платформа</h2>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M9 8h6M9 12h4"/></svg>
+        </div>
+        <h4>Конструктор сценариев</h4>
+        <p>Визуальный редактор диалоговых сценариев без кода. Создавайте ветки, условия, действия.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h4>База знаний</h4>
+        <p>Загружайте документы, FAQ, прайсы — AI обучается и отвечает по вашим данным.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
+        </div>
+        <h4>Интеграции</h4>
+        <p>Подключение к CRM, мессенджерам, вашим API через готовые коннекторы за один клик.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h4>Аналитика</h4>
+        <p>Полная статистика: диалоги, конверсии, топ-вопросы, эффективность бота.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <h4>Многопользовательский доступ</h4>
+        <p>Роли: администратор, оператор, аналитик. Каждый видит только нужную ему информацию.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Безопасность данных</h4>
+        <p>Данные клиентов хранятся в защищённом облаке. Соответствие требованиям законодательства РК.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN DEMOS -->
+<section class="section" id="demos">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="badge" style="margin:0 auto 20px">Открытые демо</div>
+      <h2>Попробуйте прямо сейчас</h2>
+      <p>Готовые демо-решения — можно запустить и протестировать без регистрации</p>
+    </div>
+
+    <div class="grid-3">
+      <!-- Demo 1 -->
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:all var(--transition);" onmouseover="this.style.borderColor='var(--border-cyan)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''">
+        <div style="height:200px;background:linear-gradient(135deg,rgba(6,182,212,0.1),rgba(59,130,246,0.1));display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border);position:relative;overflow:hidden">
+          <!-- Chat UI preview -->
+          <div style="background:var(--bg-base);border:1px solid var(--border);border-radius:12px;padding:16px;width:80%;max-width:220px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--border)">
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--cyan-glow);border:1px solid var(--border-cyan);display:flex;align-items:center;justify-content:center;color:var(--cyan);font-size:0.65rem;font-weight:700">AI</div>
+              <div style="font-size:0.8125rem;font-weight:600">Sales Bot</div>
+              <div style="width:6px;height:6px;border-radius:50%;background:#4ADE80;margin-left:auto"></div>
+            </div>
+            <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.5">Здравствуйте! Я помогу подобрать квартиру. Какой бюджет?</div>
+          </div>
+        </div>
+        <div style="padding:24px">
+          <div class="blog-cat">Продажи</div>
+          <div class="blog-title">Sales Bot — Недвижимость</div>
+          <div class="blog-excerpt">Квалификация лидов, ответы на вопросы о объектах, запись на показ</div>
+          <a href="contacts.html" class="btn btn-ghost btn-sm" style="margin-top:16px;width:100%;justify-content:center">Запросить доступ</a>
+        </div>
+      </div>
+
+      <!-- Demo 2 -->
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:all var(--transition);" onmouseover="this.style.borderColor='var(--border-cyan)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''">
+        <div style="height:200px;background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(6,182,212,0.1));display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border)">
+          <div style="background:var(--bg-base);border:1px solid var(--border);border-radius:12px;padding:16px;width:80%;max-width:220px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--border)">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);display:flex;align-items:center;justify-content:center;color:var(--blue-light);font-size:0.65rem;font-weight:700">HLP</div>
+              <div style="font-size:0.8125rem;font-weight:600">Support Bot</div>
+              <div style="width:6px;height:6px;border-radius:50%;background:#4ADE80;margin-left:auto"></div>
+            </div>
+            <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.5">Я помогу решить ваш вопрос. Напишите проблему:</div>
+          </div>
+        </div>
+        <div style="padding:24px">
+          <div class="blog-cat">Поддержка</div>
+          <div class="blog-title">Support Bot — E-commerce</div>
+          <div class="blog-excerpt">Статус заказа, возвраты, гарантия — автоответы на 70% запросов</div>
+          <a href="contacts.html" class="btn btn-ghost btn-sm" style="margin-top:16px;width:100%;justify-content:center">Запросить доступ</a>
+        </div>
+      </div>
+
+      <!-- Demo 3 -->
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:all var(--transition);" onmouseover="this.style.borderColor='var(--border-cyan)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''">
+        <div style="height:200px;background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(6,182,212,0.08));display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border)">
+          <div style="background:var(--bg-base);border:1px solid var(--border);border-radius:12px;padding:16px;width:80%;max-width:220px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--border)">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);display:flex;align-items:center;justify-content:center;color:#4ADE80;font-size:0.65rem;font-weight:700">HR</div>
+              <div style="font-size:0.8125rem;font-weight:600">HR Bot</div>
+              <div style="width:6px;height:6px;border-radius:50%;background:#4ADE80;margin-left:auto"></div>
+            </div>
+            <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.5">Привет! Пришлите резюме или расскажите об опыте:</div>
+          </div>
+        </div>
+        <div style="padding:24px">
+          <div class="blog-cat">HR</div>
+          <div class="blog-title">HR Bot — Скрининг кандидатов</div>
+          <div class="blog-excerpt">Автоскрининг резюме, ответы, назначение интервью</div>
+          <a href="contacts.html" class="btn btn-ghost btn-sm" style="margin-top:16px;width:100%;justify-content:center">Запросить доступ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO NEEDS IT -->
+<section class="section" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="badge" style="margin:0 auto 20px">Кому полезно</div>
+      <h2>Для кого создана платформа</h2>
+    </div>
+
+    <div class="grid-2" style="gap:24px">
+      <div style="background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;display:flex;gap:20px">
+        <div style="width:52px;height:52px;border-radius:12px;background:var(--cyan-glow);border:1px solid var(--border-cyan);display:flex;align-items:center;justify-content:center;color:var(--cyan);flex-shrink:0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div>
+          <h4>Бизнес с отделом продаж</h4>
+          <p>Оптимальна для компаний с 5+ менеджерами и входящим потоком лидов. Любая ниша.</p>
+        </div>
+      </div>
+      <div style="background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;display:flex;gap:20px">
+        <div style="width:52px;height:52px;border-radius:12px;background:var(--cyan-glow);border:1px solid var(--border-cyan);display:flex;align-items:center;justify-content:center;color:var(--cyan);flex-shrink:0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <h4>Компании с поддержкой</h4>
+          <p>E-commerce, SaaS, банки, страховые — все, кто обрабатывает повторяющиеся запросы.</p>
+        </div>
+      </div>
+      <div style="background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;display:flex;gap:20px">
+        <div style="width:52px;height:52px;border-radius:12px;background:var(--cyan-glow);border:1px solid var(--border-cyan);display:flex;align-items:center;justify-content:center;color:var(--cyan);flex-shrink:0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <h4>HR-отделы и агентства</h4>
+          <p>При найме 10+ человек в месяц автоматизация скрининга даёт мгновенный ROI.</p>
+        </div>
+      </div>
+      <div style="background:var(--bg-base);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;display:flex;gap:20px">
+        <div style="width:52px;height:52px;border-radius:12px;background:var(--cyan-glow);border:1px solid var(--border-cyan);display:flex;align-items:center;justify-content:center;color:var(--cyan);flex-shrink:0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div>
+          <h4>Предприниматели, которые масштабируются</h4>
+          <p>Платформа растёт вместе с бизнесом — добавляйте агентов, каналы, интеграции без переработки.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section reveal">
+  <div class="container">
+    <div class="cta-content">
+      <div class="badge" style="margin:0 auto 24px">Хотите посмотреть?</div>
+      <h2>Запросите демо-доступ к платформе</h2>
+      <p>Покажем платформу изнутри, запустим тестового бота под ваш кейс — прямо на встрече.</p>
+      <div class="cta-actions">
+        <a href="contacts.html" class="btn btn-primary">Запросить демо</a>
+        <a href="cases.html" class="btn btn-secondary">Кейсы клиентов</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="navbar-logo" style="font-size:1.5rem">botify<span>.kz</span></div>
+        <p>AI-интегратор для бизнеса в Казахстане.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Решения</h5>
+        <ul>
+          <li><a href="solutions.html#sales">AI для продаж</a></li>
+          <li><a href="solutions.html#support">AI для поддержки</a></li>
+          <li><a href="solutions.html#hr">AI для HR</a></li>
+          <li><a href="solutions.html#crm">Интеграция CRM</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Компания</h5>
+        <ul>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="cases.html">Кейсы</a></li>
+          <li><a href="blog.html">Блог</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Контакты</h5>
+        <ul>
+          <li><a href="tel:+77000000000">+7 (700) 000-00-00</a></li>
+          <li><a href="mailto:hello@botify.kz">hello@botify.kz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 botify.kz</p>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
