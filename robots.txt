@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://botify.kz/sitemap.xml
