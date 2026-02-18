@@ -364,10 +364,55 @@
 <script src="data.js"></script>
 <script src="app.js"></script>
 <script>
+  var TG_TOKEN = '8071707044:AAFltW97sUg0WgsWR4eZDCrDvneVIh5xykU';
+  var TG_CHAT  = '1080443775';
+
   function handleSubmit(e) {
     e.preventDefault();
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+
+    var name      = document.getElementById('name').value.trim();
+    var company   = document.getElementById('company').value.trim();
+    var phone     = document.getElementById('phone').value.trim();
+    var task      = document.getElementById('task').value.trim();
+    var direction = document.getElementById('direction').value;
+
+    var text =
+      '📥 *Новая заявка с botify.kz*\n\n' +
+      '👤 *Имя:* ' + name + '\n' +
+      '🏢 *Компания:* ' + company + '\n' +
+      '📞 *Телефон:* ' + phone + '\n' +
+      (direction ? '🎯 *Направление:* ' + direction + '\n' : '') +
+      (task ? '\n📝 *Задача:*\n' + task : '');
+
+    var btn = e.target.querySelector('[type=submit]');
+    btn.disabled = true;
+    btn.textContent = 'Отправляем...';
+
+    fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: TG_CHAT,
+        text: text,
+        parse_mode: 'Markdown'
+      })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.ok) {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        alert('Ошибка отправки. Напишите нам напрямую: office@botify.kz');
+        btn.disabled = false;
+        btn.textContent = 'Получить аудит бесплатно';
+      }
+    })
+    .catch(function() {
+      alert('Ошибка сети. Напишите нам напрямую: office@botify.kz');
+      btn.disabled = false;
+      btn.textContent = 'Получить аудит бесплатно';
+    });
   }
 
   function toggleFaq(btn) {
