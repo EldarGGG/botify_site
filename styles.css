@@ -1072,10 +1072,19 @@ p  { line-height: 1.75; color: var(--text-secondary); }
   transition: color var(--transition);
 }
 .footer-col ul li a:hover { color: var(--cyan); }
+.footer-requisites {
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.footer-requisites p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
 .footer-bottom {
   display: flex; align-items: center; justify-content: space-between;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
+  padding-top: 24px;
   flex-wrap: wrap; gap: 16px;
 }
 .footer-bottom p { font-size: 0.875rem; color: var(--text-muted); }
