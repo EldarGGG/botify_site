@@ -434,6 +434,7 @@
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data.ok) {
+        if (typeof fbq !== 'undefined') fbq('track', 'Lead');
         document.getElementById('contactForm').style.display = 'none';
         document.getElementById('formSuccess').style.display = 'block';
       } else {
